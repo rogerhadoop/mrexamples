@@ -30,7 +30,9 @@ SQL> select * from dept;
         40 OPERATIONS     BOSTON
 
 ==================================================================================================
-Git: https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+Git:
+https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+https://help.github.com/articles/changing-a-remote-s-url/
 (1) Create a new repository on GitHub.
 (2) In the Command prompt, change the current working directory to your local project.
 (3) Initialize the local directory as a Git repository.
