@@ -32,7 +32,8 @@ SQL> select * from dept;
         30 SALES          CHICAGO
         40 OPERATIONS     BOSTON
         
-==================================================================================================
+
+
 Git: 
 https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
 https://help.github.com/articles/changing-a-remote-s-url/
@@ -60,7 +61,8 @@ https://help.github.com/articles/changing-a-remote-s-url/
 (8) Push the changes in your local repository to GitHub.
     $ git push origin master
     # Pushes the changes in your local repository up to the remote repository you specified as the origin
-==================================================================================================
+
+
 
 Exercise:
 
@@ -114,6 +116,7 @@ select dname, count(empno), avg(sal) from emp join dept on emp.deptno=dept.deptn
 
 (3) list the first hired employee's name for each dept.
 select e.deptno, e.ename, e.hiredate from (select deptno, min(hiredate) as mindate from emp group by deptno) a join emp e on e.hiredate=a.mindate AND e.deptno=a.deptno;
+
 select e.deptno, e.ename, e.hiredate from (select deptno, min(hiredate) as mindate from emp group by deptno) a, emp e where e.hiredate=a.mindate AND e.deptno=a.deptno;
 
 
@@ -149,14 +152,22 @@ select ename, sal+comm as income from emp order by income;
 
 
 01 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.TotalSalary01               hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o1
+
 02 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.AverageSalaryAndHeadcount02 hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o2
+
 03 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.TenureEmployeePerDept03     hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o3
+
 05 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.HigherSalaryThanManager05   hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o5
+
 06 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.HigherSalaryThanAverage06   hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o6
+
 08 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.Top3SalaryEmployee08        hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o8
+
 09 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.EmployeeListByIncome09      hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o9
+
 10 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.MiddleCounts                hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o10
 
 04 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.TotalSalaryPerCity04        hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/dept.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o4
+
 07 yarn jar /home/cloudera/IdeaProjects/mrexamples/target/empquery-1.0-SNAPSHOT.jar hadoop2.examples.JEmployeeAndDept07          hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/emp.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/dept.txt hdfs://quickstart.cloudera:8020/user/cloudera/data/emp/yarn-result/o7
 
